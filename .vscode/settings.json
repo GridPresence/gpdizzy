@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.semanticHighlighting.enabled": true
+  },
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false,
+    "editor.semanticHighlighting.enabled": true
+  },
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "strict"
+}
