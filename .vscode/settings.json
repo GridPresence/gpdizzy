@@ -12,5 +12,8 @@
     "editor.semanticHighlighting.enabled": true
   },
   "python.analysis.completeFunctionParens": true,
-  "python.analysis.typeCheckingMode": "strict"
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.extraPaths": [
+    "~/.virtualenvs/gpdizzy/lib/python3.8/site-packages"
+  ]
 }
