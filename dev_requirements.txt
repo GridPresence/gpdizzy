@@ -1,2 +1,3 @@
+mypy
 mido
 pytest

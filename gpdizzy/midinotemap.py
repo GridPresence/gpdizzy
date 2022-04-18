@@ -20,7 +20,10 @@ class MidiNoteMap() :
         "C8" : 108, "C#8" : 109, "Db8" : 109, "D8" : 110, "D#8" : 111, "Eb8" : 111, "E8" : 112, "F8" : 113,
         "F#8" : 114, "Gb8" : 114, "G8" : 115, "G#8" : 116, "Ab8" : 116, "A8" : 117, "A#8" : 118, "Bb8" : 118, "B8" : 119,        
         "C9" : 120, "C#9" : 121, "Db9" : 121, "D9" : 122, "D#9" : 123, "Eb9" : 123, "E9" : 124, "F9" : 125,
-        "F#9" : 126, "Gb9" : 126, "G9" : 127,
+        "F#9" : 126, "Gb9" : 126, "G9" : 127
+    }
+
+    ALIASES = {
         "ConcertA" : 69, "MiddleC" : 60
     }
 
@@ -39,14 +42,6 @@ class MidiNoteMap() :
     def __init__(self) -> None : 
         pass
 
-    def __getattribute__(self, __name: str) -> int:
-        retval = None
-        if __name in self.MIDI:
-            retval = self.MIDI[__name]
-        else:
-            raise ValueError("Invalid note value")
-        return retval
-
     def map(self, __note: str, __octave: int) -> int:
         retval = None
         if __note in self.NOTES:
@@ -56,5 +51,8 @@ class MidiNoteMap() :
             else:
                 raise ValueError("Unmapped note/octave combination")
         else:
-            raise ValueError("Unmapped note/octave combination")
+            if __note in self.ALIASES:
+                retval = self.ALIASES[__note]
+            else:
+                raise ValueError("Unmapped note/octave combination")
         return retval
